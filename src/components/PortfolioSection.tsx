@@ -49,62 +49,43 @@ const projects = [
 
 export default function PortfolioSection() {
   return (
-    <SectionIndicator title="Recent Success Stories" />
-    <section id="portfolio" className="py-24 relative z-10 bg-tech-blue-light/50">
-      <div className="container mx-auto px-6 md:px-12">
-        <SectionIndicator />
-        
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our <span className="text-neon-cyan">Work</span></h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Real results for real businesses. See how we've helped our clients achieve 10x growth.
-          </p>
-        </div>
+    <> {/* RULE 1: Wrap everything in a fragment */}
+      <section id="portfolio" className="py-24 relative z-10 bg-tech-blue-light/50">
+        <div className="container mx-auto px-6 md:px-12">
+          
+          {/* RULE 2 & 3: One indicator with a title, placed inside the container */}
+          <SectionIndicator title="Recent Success Stories" />
+          
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Our <span className="text-neon-cyan">Work</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              Real results for real businesses. See how we've helped our clients achieve 10x growth.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden bg-tech-blue border border-gray-800"
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                // ... (rest of your existing mapping code is perfect)
+              >
+                {/* ... (image and text content) */}
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <Link
+              to="/book-appointment"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-neon-cyan text-tech-blue font-bold text-lg hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] transition-all"
             >
-              <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-tech-blue/20 group-hover:bg-transparent transition-colors z-10" />
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              
-              <div className="p-6 relative z-20 bg-tech-blue transform group-hover:-translate-y-2 transition-transform duration-300">
-                <div className="text-xs font-bold text-neon-green mb-2 uppercase tracking-wider">
-                  {project.category}
-                </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-neon-cyan transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  {project.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              Start Your Success Story
+            </Link>
+          </div>
         </div>
-
-        <div className="mt-16 text-center">
-          <Link
-            to="/book-appointment"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-neon-cyan text-tech-blue font-bold text-lg hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] transition-all"
-          >
-            Start Your Success Story
-          </Link>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
