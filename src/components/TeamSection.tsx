@@ -2,23 +2,32 @@ import { motion } from "motion/react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import SectionIndicator from "./SectionIndicator";
 
+// ✅ Import images from src/images
+import umer from '../images/umer.jpg';
+import subhan from '../images/subhan.jpg';
+import ahsan from '../images/ahsan.jpg';
+
 const team = [
   {
     name: "Umer Farooq",
     role: "WordPress & Shopify Expert",
-    image: "./images/umer.jpg",
-    socials: { fb: "https://www.facebook.com/farooq.hassan.916192", insta: "https://www.instagram.com/digi10xgrowth/", linkedin: "https://www.linkedin.com/in/umer-farooq-0ab123333/" }
+    image: umer,
+    socials: { 
+      fb: "https://www.facebook.com/farooq.hassan.916192", 
+      insta: "https://www.instagram.com/digi10xgrowth/", 
+      linkedin: "https://www.linkedin.com/in/umer-farooq-0ab123333/" 
+    }
   },
   {
     name: "Subhan Shoukat",
     role: "Meta & TikTok Ads Expert",
-    image: "./images/subhan.jpg",
+    image: subhan,
     socials: { fb: "#", insta: "#", linkedin: "#" }
   },
   {
     name: "Ahsan Shakeel",
     role: "Content Marketing & Creative Design Expert",
-    image: "./images/ahsan.jpg",
+    image: ahsan,
     socials: { fb: "#", insta: "#", linkedin: "#" }
   }
 ];
