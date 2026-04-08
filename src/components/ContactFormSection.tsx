@@ -140,7 +140,7 @@ export default function ContactFormSection() {
                     onChange={handleChange}
                     type="tel" 
                     className="w-full bg-tech-blue-light border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors"
-                    placeholder="+92 348-7347022"
+                    placeholder="+92 300-0000000"
                   />
                 </div>
                 <div className="space-y-2">
