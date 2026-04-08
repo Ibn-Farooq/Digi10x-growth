@@ -35,6 +35,7 @@ const team = [
 
 export default function TeamSection() {
   return (
+    <SectionIndicator title="Meet our team" />
     <section id="team" className="py-24 relative z-10 bg-tech-blue-light/50">
       <div className="container mx-auto px-6 md:px-12">
         <SectionIndicator />

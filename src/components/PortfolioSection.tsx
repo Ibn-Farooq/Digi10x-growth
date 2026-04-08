@@ -49,6 +49,7 @@ const projects = [
 
 export default function PortfolioSection() {
   return (
+    <SectionIndicator title="Recent Success Stories" />
     <section id="portfolio" className="py-24 relative z-10 bg-tech-blue-light/50">
       <div className="container mx-auto px-6 md:px-12">
         <SectionIndicator />

@@ -5,6 +5,7 @@ import SectionIndicator from "./SectionIndicator";
 
 export default function AboutSection() {
   return (
+    <SectionIndicator title="Who We Are" />
     <section id="about" className="py-24 relative z-10 bg-tech-blue">
       <div className="container mx-auto px-6 md:px-12">
         <SectionIndicator />

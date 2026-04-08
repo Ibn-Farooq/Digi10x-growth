@@ -56,6 +56,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
+    <SectionIndicator title="Our Premium Services" />
     <section id="services" className="py-24 relative z-10 bg-tech-blue">
       <div className="container mx-auto px-6 md:px-12">
         <SectionIndicator />
