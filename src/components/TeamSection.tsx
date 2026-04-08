@@ -3,9 +3,9 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 import SectionIndicator from "./SectionIndicator";
 
 // ✅ Import images from src/images (TS-friendly)
-import umer from '../images/umer.jpg';
-import subhan from '../images/subhan.jpg';
-import ahsan from '../images/ahsan.jpg';
+import umer from '../images/umer.jpeg';
+import subhan from '../images/subhan.jpeg';
+import ahsan from '../images/ahsan.jpeg';
 
 // Team array using imported images
 const team = [
