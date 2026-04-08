@@ -108,7 +108,7 @@ export default function ContactFormSection() {
                   <label className="text-sm font-medium text-gray-300">Full Name</label>
                   <input 
                     required
-                    name="name" // 3. Added name attribute
+                    name="name" /* 3. Added name attribute */
                     value={formData.name}
                     onChange={handleChange}
                     type="text" 
