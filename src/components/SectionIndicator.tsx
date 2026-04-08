@@ -1,24 +1,14 @@
-import { motion } from "motion/react";
+import React from 'react';
 
 export default function SectionIndicator() {
   return (
-    <div className="flex justify-center mb-8">
-      <motion.div
-        className="w-3 h-3 rounded-full"
-        animate={{
-          backgroundColor: ["#00F0FF", "#00FF66", "#00F0FF"],
-          boxShadow: [
-            "0 0 10px #00F0FF",
-            "0 0 15px #00FF66",
-            "0 0 10px #00F0FF",
-          ],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/20 text-white text-sm font-medium mb-8 backdrop-blur-sm shadow-lg">
+      {/* The Red/Blue High-Speed Flash */}
+      <span className="w-2.5 h-2.5 rounded-full animate-flash" />
+      
+      <span className="tracking-wide uppercase text-[10px] md:text-xs font-bold">
+        Turning Clicks into <span className="text-neon-cyan">Revenue</span>
+      </span>
     </div>
   );
 }

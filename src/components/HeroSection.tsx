@@ -33,10 +33,11 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-cyan/10 border border-neon-cyan/20 text-neon-cyan text-sm font-medium mb-8">
-                <span className="w-2 h-2 rounded-full bg-neon-cyan animate-pulse" />
-                Turning Clicks into Revenue
-              </div>
+             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium mb-8">
+  {/* Just change animate-pulse to animate-flash here */}
+  <span className="w-2.5 h-2.5 rounded-full animate-flash" />
+  <span className="tracking-wide">Turning Clicks into Revenue</span>
+</div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
                 Scale Your Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-green text-glow">10x</span> with Result-Driven Digital Marketing
