@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion"; // Note: ensure your import matches your package (framer-motion or motion)
 import SectionIndicator from "./SectionIndicator";
 
 const servicesList = [
@@ -12,19 +12,52 @@ const servicesList = [
   "Other"
 ];
 
+// Helper to encode form data for Netlify
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 export default function ContactFormSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  
+  // State to manage form inputs
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    solution: "",
+    budget: "",
+    message: ""
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+      .then(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        // Reset form after success
+        setFormData({ name: "", email: "", phone: "", solution: "", budget: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 5000);
+      })
+      .catch(error => {
+        console.error(error);
+        setIsSubmitting(false);
+        alert("There was an error sending your message. Please try again.");
+      });
   };
 
   return (
@@ -46,7 +79,6 @@ export default function ContactFormSection() {
           transition={{ duration: 0.5 }}
           className="bg-tech-blue rounded-3xl p-8 md:p-12 border border-gray-800 shadow-2xl relative overflow-hidden"
         >
-          {/* Decorative glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50" />
           
           {isSuccess ? (
@@ -60,21 +92,37 @@ export default function ContactFormSection() {
               <p className="text-gray-400">We'll be in touch shortly to discuss your growth strategy.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            /* 1. Added data-netlify attributes */
+            <form 
+              name="contact" 
+              method="POST" 
+              data-netlify="true" 
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+            >
+              {/* 2. Hidden input for Netlify bot discovery */}
+              <input type="hidden" name="form-name" value="contact" />
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-300">Full Name</label>
                   <input 
                     required
+                    name="name" // 3. Added name attribute
+                    value={formData.name}
+                    onChange={handleChange}
                     type="text" 
                     className="w-full bg-tech-blue-light border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors"
-                    placeholder=" M.Ali"
+                    placeholder="M. Ali"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-300">Email Address</label>
                   <input 
                     required
+                    name="email" // 3. Added name attribute
+                    value={formData.email}
+                    onChange={handleChange}
                     type="email" 
                     className="w-full bg-tech-blue-light border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors"
                     placeholder="ali@example.com"
@@ -87,16 +135,21 @@ export default function ContactFormSection() {
                   <label className="text-sm font-medium text-gray-300">Phone Number</label>
                   <input 
                     required
+                    name="phone" // 3. Added name attribute
+                    value={formData.phone}
+                    onChange={handleChange}
                     type="tel" 
                     className="w-full bg-tech-blue-light border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors"
-                    placeholder="+92 300-0000000"
+                    placeholder="+92 348-7347022"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-300">Solution Needed</label>
                   <select 
                     required
-                    defaultValue=""
+                    name="solution" // 3. Added name attribute
+                    value={formData.solution}
+                    onChange={handleChange}
                     className="w-full bg-tech-blue-light border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors appearance-none"
                   >
                     <option value="" disabled>Select a service...</option>
@@ -111,7 +164,9 @@ export default function ContactFormSection() {
                 <label className="text-sm font-medium text-gray-300">Estimated Budget Range</label>
                 <select 
                   required
-                  defaultValue=""
+                  name="budget" // 3. Added name attribute
+                  value={formData.budget}
+                  onChange={handleChange}
                   className="w-full bg-tech-blue-light border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors appearance-none"
                 >
                   <option value="" disabled>Select budget range...</option>
@@ -125,6 +180,9 @@ export default function ContactFormSection() {
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-300">Additional Requirements</label>
                 <textarea 
+                  name="message" // 3. Added name attribute
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={4}
                   className="w-full bg-tech-blue-light border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors resize-none"
                   placeholder="Tell us about your business goals..."
