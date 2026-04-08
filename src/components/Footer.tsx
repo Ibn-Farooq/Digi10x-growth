@@ -92,6 +92,11 @@ export default function Footer() {
               >
                 Book Appointment
               </Link>
+               socials: { 
+      fb: "https://www.facebook.com/digi10xgrow", 
+      insta: "https://www.instagram.com/digi10xgrowth/", 
+      linkedin: "https://www.linkedin.com/in/umer-farooq-0ab123333/" 
+    }
             </div>
           </div>
 
