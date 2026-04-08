@@ -6,19 +6,19 @@ const team = [
   {
     name: "Umer Farooq",
     role: "WordPress & Shopify Expert",
-    image: "https://ui-avatars.com/api/?name=Umer+Farooq&background=00F0FF&color=0B0F23&size=256&font-size=0.33",
-    socials: { fb: "#", insta: "#", linkedin: "#" }
+    image: "./images/umer.jpg",
+    socials: { fb: "https://www.facebook.com/farooq.hassan.916192", insta: "https://www.instagram.com/digi10xgrowth/", linkedin: "https://www.linkedin.com/in/umer-farooq-0ab123333/" }
   },
   {
     name: "Subhan Shoukat",
     role: "Meta & TikTok Ads Expert",
-    image: "https://ui-avatars.com/api/?name=Subhan+Shoukat&background=00FF66&color=0B0F23&size=256&font-size=0.33",
+    image: "./images/subhan.jpg",
     socials: { fb: "#", insta: "#", linkedin: "#" }
   },
   {
     name: "Ahsan Shakeel",
     role: "Content Marketing & Creative Design Expert",
-    image: "https://ui-avatars.com/api/?name=Ahsan+Shakeel&background=00F0FF&color=0B0F23&size=256&font-size=0.33",
+    image: "./images/ahsan.jpg",
     socials: { fb: "#", insta: "#", linkedin: "#" }
   }
 ];
