@@ -2,11 +2,12 @@ import { motion } from "motion/react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import SectionIndicator from "./SectionIndicator";
 
-// ✅ Import images from src/images
+// ✅ Import images from src/images (TS-friendly)
 import umer from '../images/umer.jpg';
 import subhan from '../images/subhan.jpg';
 import ahsan from '../images/ahsan.jpg';
 
+// Team array using imported images
 const team = [
   {
     name: "Umer Farooq",
@@ -39,7 +40,9 @@ export default function TeamSection() {
         <SectionIndicator />
         
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Meet Our <span className="text-neon-cyan">Experts</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Meet Our <span className="text-neon-cyan">Experts</span>
+          </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             The creative minds and technical wizards behind your next big growth phase.
           </p>
@@ -64,7 +67,9 @@ export default function TeamSection() {
                 />
               </div>
               
-              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-neon-cyan transition-colors">{member.name}</h3>
+              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-neon-cyan transition-colors">
+                {member.name}
+              </h3>
               <p className="text-neon-green text-sm font-medium mb-6">{member.role}</p>
               
               <div className="flex items-center justify-center gap-4">
