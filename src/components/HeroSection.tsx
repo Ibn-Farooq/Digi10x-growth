@@ -39,7 +39,7 @@ export default function HeroSection() {
                <SectionIndicator title="Turning Clicks into Revenue" />
                 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                  Scale Your Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-green text-glow">10x</span> with Result-Driven Digital Marketing
+                  Scale Your Business -Test <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-green text-glow">10x</span> with Result-Driven Digital Marketing
                 </h1>
                 
                 <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
