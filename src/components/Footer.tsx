@@ -15,7 +15,7 @@ export default function Footer() {
     },
     { 
   name: "WhatsApp", 
-  icon: <MessageCircle size={18} />, // Note: Most icon libraries use MessageCircle or WhatsApp
+  icon: <MessageCircle size={18} />, 
   href: "https://wa.me/923710045282" 
 },
     { 
