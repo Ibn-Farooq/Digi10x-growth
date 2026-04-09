@@ -5,18 +5,21 @@ interface SectionIndicatorProps {
 }
 
 export default function SectionIndicator({ title }: SectionIndicatorProps) {
+  // If no title is passed accidentally, it won't crash the site
+  if (!title) return null;
+
   return (
-    /* w-full and flex-justify-center FORCES it to the middle */
-    <div className="w-full flex justify-center mb-6">
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/20 backdrop-blur-sm shadow-lg">
+    <div className="w-full flex justify-center mb-8 relative z-20">
+      <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-tech-blue-light/40 border border-white/10 backdrop-blur-md shadow-[0_0_20px_rgba(0,240,255,0.05)] group hover:border-neon-cyan/40 transition-all duration-500">
+        
         {/* The Flash Dot */}
-        <span className="relative flex h-3 w-3">
+        <span className="relative flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-cyan opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-neon-cyan shadow-[0_0_10px_#00f0ff]"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-neon-cyan shadow-[0_0_10px_#00f0ff]"></span>
         </span>
         
-        {/* The Text - This MUST use {title} */}
-        <span className="text-white text-[10px] md:text-xs font-bold uppercase tracking-widest">
+        {/* The Text - Dynamically rendered */}
+        <span className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] select-none">
           {title}
         </span>
       </div>

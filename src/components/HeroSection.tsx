@@ -36,7 +36,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.6 }}
               >
                 {/* Center this indicator with the correct title */}
-                <SectionIndicator title="Turning Clicks into Revenue" />
+               <SectionIndicator title="Turning Clicks into Revenue" />
                 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
                   Scale Your Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-green text-glow">10x</span> with Result-Driven Digital Marketing
