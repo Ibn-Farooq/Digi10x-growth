@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, ArrowRight, Facebook, Instagram, Linkedin, Github , MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowRight, Facebook, MessageCircle , Instagram, Linkedin, Github } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
