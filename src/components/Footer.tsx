@@ -48,7 +48,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed">
               Turning Clicks into Revenue. We are a results-driven digital marketing agency focused on scaling your business.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-5">
               {socialLinks.map((social) => (
                 <a 
                   key={social.name} 
