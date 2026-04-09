@@ -14,10 +14,10 @@ export default function Footer() {
       href: "https://www.instagram.com/digi10xgrowth/" 
     },
     { 
-      name: "Whatsapp", 
-      icon: <Whatsapp size={18} />, 
-      href: "https://wa.me/03710045282/" 
-    },    
+  name: "WhatsApp", 
+  icon: <MessageCircle size={18} />, // Note: Most icon libraries use MessageCircle or WhatsApp
+  href: "https://wa.me/923710045282" 
+},
     { 
       name: "LinkedIn", 
       icon: <Linkedin size={18} />, 
