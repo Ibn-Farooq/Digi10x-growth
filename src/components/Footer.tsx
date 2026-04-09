@@ -14,6 +14,11 @@ export default function Footer() {
       href: "https://www.instagram.com/digi10xgrowth/" 
     },
     { 
+      name: "Whatsapp", 
+      icon: <Whatsapp size={18} />, 
+      href: "https://wa.me/03710045282/" 
+    },    
+    { 
       name: "LinkedIn", 
       icon: <Linkedin size={18} />, 
       href: "https://www.linkedin.com/in/umer-farooq-0ab123333/" 
