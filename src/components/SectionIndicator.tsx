@@ -14,7 +14,7 @@ export default function SectionIndicator({ title }: SectionIndicatorProps) {
         
         {/* The Flash Dot */}
         <span className="relative flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-cyan opacity-75"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-neon-cyan shadow-[0_0_10px_#00f0ff]"></span>
         </span>
         

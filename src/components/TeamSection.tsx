@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import SectionIndicator from "./components/SectionIndicator";
+import SectionIndicator from "./components/SectionIndicator ";
 
 // ✅ Import images from src/images (TS-friendly)
 import umer from '../images/umer.jpeg';
