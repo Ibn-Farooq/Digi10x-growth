@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion"; // Note: ensure your import matches your package (framer-motion or motion)
-import SectionIndicator from "./SectionIndicator";
+import SectionIndicator from "./components/SectionIndicator";
 
 const servicesList = [
   "WordPress Development",
