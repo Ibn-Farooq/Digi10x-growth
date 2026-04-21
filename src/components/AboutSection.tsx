@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Target, TrendingUp, Users, Zap } from "lucide-react";
-
+import SectionIndicator from "./SectionIndicator";
 
 export default function AboutSection() {
   return (

@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Code, Megaphone, ShoppingCart, Settings, Search, Video } from "lucide-react";
-import SectionIndicator from "./components/SectionIndicator";
+import SectionIndicator from "./SectionIndicator";
 
 const services = [
   {
