@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import SectionIndicator from "./components/SectionIndicator";
+
 
 const projects = [
   {

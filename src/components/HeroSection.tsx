@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Laptop, Smartphone } from "lucide-react";
-import SectionIndicator from './components/SectionIndicator';
 
 export default function HeroSection() {
   return (

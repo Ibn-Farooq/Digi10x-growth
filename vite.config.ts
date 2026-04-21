@@ -1,10 +1,11 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 
-export default defineConfig(({mode}) => {
+export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
+  
   return {
     plugins: [react(), tailwindcss()],
     define: {
@@ -16,9 +17,17 @@ export default defineConfig(({mode}) => {
       },
     },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
-      hmr: process.env.DISABLE_HMR !== 'true',
+      // 1. FORCE HMR to be true so the browser updates on save
+      hmr: true, 
+      
+      // 2. Add Watch Polling so Windows detects your file changes
+      watch: {
+        usePolling: true,
+        interval: 100,
+      },
+      
+      // 3. Ensure host is true for easier debugging
+      host: true,
     },
   };
 });
