@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion"; // Note: ensure your import matches your package (framer-motion or motion)
-
+import SectionIndicator from "./SectionIndicator";
 const servicesList = [
   "WordPress Development",
   "Meta Ads",
@@ -59,7 +59,7 @@ export default function ContactFormSection() {
       });
   };
 
- export default function ContactFormSection() {
+ 
   return (
     <> {/* Wrap everything in a fragment to fix the error */}
       <section id="contact" className="py-24 relative z-10 bg-tech-blue-light/30">
