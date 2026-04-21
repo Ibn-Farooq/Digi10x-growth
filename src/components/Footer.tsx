@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, ArrowRight, Facebook, MessageCircle , Instagram, Linkedin, Github } from "lucide-react";
-import SectionIndicator from "./SectionIndicator";
+import SectionIndicator from "./components/SectionIndicator ";
 export default function Footer() {
   const socialLinks = [
     { 
